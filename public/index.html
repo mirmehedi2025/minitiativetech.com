@@ -4,320 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minitiativetech | Zero Does Matter</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="icon" href="image/techlogo.jpeg" type="image/x-icon">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        
-        :root {
-            --brand-primary: #00ff88;
-            --brand-dark: #0a0a0a;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--brand-dark);
-            color: #ffffff;
-            scroll-behavior: smooth;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #00ff88, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-            border: 1px solid #333;
-        }
-
-        .card-hover:hover {
-            border-color: var(--brand-primary);
-            transform: translateY(-5px);
-            background: #1e1e1e;
-        }
-
-        /* Mobile Menu Overlay */
-        #mobile-menu {
-            transition: all 0.3s ease-in-out;
-            transform: translateY(-100%);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        #mobile-menu.active {
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        /* Responsive WhatsApp */
-        @media (max-width: 640px) {
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                padding: 10px 16px;
-                font-size: 14px;
-            }
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50px;
-            padding: 12px 24px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: transform 0.3s;
-        }
-    </style>
+    <link rel="stylesheet" href="../assests/css/base.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-    <nav class="fixed w-full z-[100] bg-black/90 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
-            <div class="text-xl md:text-2xl font-bold gradient-text">Minitiativetech</div>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo gradient-text">Minitiativetech</div>
             
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#home" class="hover:text-emerald-400 transition">Home</a>
-                <a href="#services" class="hover:text-emerald-400 transition">Services</a>
-                <a href="#solutions" class="hover:text-emerald-400 transition">Solutions</a>
-                <a href="#about" class="hover:text-emerald-400 transition">About</a>
-                <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="#">About</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+
+                
             </div>
 
-            <button id="menu-btn" class="md:hidden text-white p-2">
+            <button id="menu-btn" class="menu-btn">
                 <i data-lucide="menu"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-black border-b border-white/10 flex flex-col p-6 space-y-4 md:hidden">
-            <a href="#home" class="text-lg py-2 border-b border-white/5">Home</a>
-            <a href="#services" class="text-lg py-2 border-b border-white/5">Services</a>
-            <a href="#solutions" class="text-lg py-2 border-b border-white/5">Solutions</a>
-            <a href="#about" class="text-lg py-2 border-b border-white/5">About</a>
-            <a href="#contact" class="text-lg py-2">Contact</a>
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#about">About</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex items-center pt-28 pb-12 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
-            <div class="text-center md:text-left">
-                <span class="text-emerald-400 font-semibold tracking-widest uppercase text-xs md:text-sm mb-4 block">Zero Does Matter</span>
-                <h1 class="text-4xl md:text-7xl font-bold leading-tight mb-6">
-                    Digital Transformation <br> 
-                    <span class="gradient-text">Made Simple.</span>
-                </h1>
-                <p class="text-gray-400 text-base md:text-lg mb-8 max-w-lg mx-auto md:mx-0">
-                    We deliver practical websites and digital solutions that solve real problems for businesses with honesty and consistency.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                    <a href="#solutions" class="bg-emerald-500 hover:bg-emerald-600 text-black px-8 py-4 rounded-full font-bold transition text-center">View Solutions</a>
-                    <a href="https://wa.me/8801842741932" class="border border-white/20 hover:bg-white/10 px-8 py-4 rounded-full font-bold transition text-center">Free Consultation</a>
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="badge">Zero Does Matter</span>
+                <h1>Digital Transformation <br> <span class="gradient-text">Made Simple.</span></h1>
+                <p>We deliver practical websites and digital solutions that solve real problems for businesses with honesty and consistency.</p>
+                <div class="hero-btns">
+                    <a href="#solutions" class="btn btn-primary">View Solutions</a>
+                    <a href="https://wa.me/8801842741932" class="btn btn-outline">Free Consultation</a>
                 </div>
             </div>
-            <div class="relative mt-8 md:mt-0">
-                <div class="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full"></div>
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Dashboard Preview" class="relative rounded-2xl shadow-2xl border border-white/10 w-full">
+            <div class="hero-image">
+                <div class="image-glow"></div>
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Dashboard Preview">
             </div>
         </div>
     </section>
 
-    <section class="py-12 border-y border-white/5 bg-white/5">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="text-3xl md:text-4xl font-bold text-white mb-1">99%</div>
-                <div class="text-gray-400 text-xs md:text-sm uppercase tracking-wider">Client Satisfaction</div>
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">Client Satisfaction</div>
             </div>
-            <div>
-                <div class="text-3xl md:text-4xl font-bold text-white mb-1">150+</div>
-                <div class="text-gray-400 text-xs md:text-sm uppercase tracking-wider">Projects Delivered</div>
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Projects Delivered</div>
             </div>
-            <div>
-                <div class="text-3xl md:text-4xl font-bold text-white mb-1">24/7</div>
-                <div class="text-gray-400 text-xs md:text-sm uppercase tracking-wider">Support</div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support</div>
             </div>
-            <div>
-                <div class="text-3xl md:text-4xl font-bold text-white mb-1">10x</div>
-                <div class="text-gray-400 text-xs md:text-sm uppercase tracking-wider">ROI for Clients</div>
+            <div class="stat-item">
+                <div class="stat-number">10x</div>
+                <div class="stat-label">ROI for Clients</div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-20 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Expertise</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">End-to-end digital services designed to scale your business.</p>
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Expertise</h2>
+                <p>End-to-end digital services designed to scale your business.</p>
             </div>
             
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card-hover p-8 rounded-2xl bg-white/5">
-                    <i data-lucide="code-2" class="text-emerald-400 mb-6" size="40"></i>
-                    <h3 class="text-xl font-bold mb-3">Web Development</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Conversion-ready websites, web apps, and custom dashboards built for performance.</p>
+            <div class="card-grid">
+                <div class="card card-hover">
+                    <i data-lucide="code-2" class="icon"></i>
+                    <h3>Web Development</h3>
+                    <p>Conversion-ready websites, web apps, and custom dashboards built for performance.</p>
                 </div>
-                <div class="card-hover p-8 rounded-2xl bg-white/5">
-                    <i data-lucide="layout" class="text-emerald-400 mb-6" size="40"></i>
-                    <h3 class="text-xl font-bold mb-3">UI/UX Design</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Mobile-first user interfaces that provide seamless digital experiences.</p>
+                <div class="card card-hover">
+                    <i data-lucide="layout" class="icon"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Mobile-first user interfaces that provide seamless digital experiences.</p>
                 </div>
-                <div class="card-hover p-8 rounded-2xl bg-white/5">
-                    <i data-lucide="trending-up" class="text-emerald-400 mb-6" size="40"></i>
-                    <h3 class="text-xl font-bold mb-3">Digital Marketing</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">SEO optimization and performance marketing to grow your reach.</p>
+                <div class="card card-hover">
+                    <i data-lucide="trending-up" class="icon"></i>
+                    <h3>Digital Marketing</h3>
+                    <p>SEO optimization and performance marketing to grow your reach.</p>
                 </div>
-                <div class="card-hover p-8 rounded-2xl bg-white/5">
-                    <i data-lucide="settings" class="text-emerald-400 mb-6" size="40"></i>
-                    <h3 class="text-xl font-bold mb-3">Business Software</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Custom HRM, CRM, ERP, and School Management systems.</p>
+                <div class="card card-hover">
+                    <i data-lucide="settings" class="icon"></i>
+                    <h3>Business Software</h3>
+                    <p>Custom HRM, CRM, ERP, and School Management systems.</p>
                 </div>
-                <div class="card-hover p-8 rounded-2xl bg-white/5">
-                    <i data-lucide="video" class="text-emerald-400 mb-6" size="40"></i>
-                    <h3 class="text-xl font-bold mb-3">Video Editing</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">High-quality visual storytelling to engage your audience.</p>
+                <div class="card card-hover">
+                    <i data-lucide="video" class="icon"></i>
+                    <h3>Video Editing</h3>
+                    <p>High-quality visual storytelling to engage your audience.</p>
                 </div>
-                <div class="card-hover p-8 rounded-2xl bg-white/5">
-                    <i data-lucide="shield-check" class="text-emerald-400 mb-6" size="40"></i>
-                    <h3 class="text-xl font-bold mb-3">Maintenance</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Priority SLA and 24/7 support to ensure assets are secure.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="solutions" class="py-20 px-6 bg-emerald-400/5">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pricing Solutions</h2>
-                <p class="text-gray-400">Transparent packages for every stage.</p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-8 rounded-2xl border border-white/10 bg-black flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Digital Presence</h3>
-                    <div class="text-3xl font-bold mb-6">$299</div>
-                    <ul class="space-y-3 text-sm text-gray-400 mb-8 flex-grow">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-emerald-400" size="16"></i> Conversion Website</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-emerald-400" size="16"></i> Mobile Design</li>
-                    </ul>
-                    <a href="#" class="w-full py-3 text-center border border-emerald-400 text-emerald-400 rounded-lg hover:bg-emerald-400 hover:text-black transition">Get Started</a>
-                </div>
-
-                <div class="p-8 rounded-2xl border-2 border-emerald-400 bg-emerald-400/10 flex flex-col relative scale-105 z-10 my-4 lg:my-0">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-400 text-black text-xs font-bold px-3 py-1 rounded-full">POPULAR</div>
-                    <h3 class="text-lg font-bold mb-2">Business MGMT</h3>
-                    <div class="text-3xl font-bold mb-6">$799</div>
-                    <ul class="space-y-3 text-sm text-gray-400 mb-8 flex-grow">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-emerald-400" size="16"></i> Admin Panel</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-emerald-400" size="16"></i> Lead Tracking</li>
-                    </ul>
-                    <a href="#" class="w-full py-3 text-center bg-emerald-400 text-black rounded-lg font-bold hover:bg-emerald-500 transition">Get Started</a>
-                </div>
-
-                <div class="p-8 rounded-2xl border border-white/10 bg-black flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Automation</h3>
-                    <div class="text-3xl font-bold mb-6">$2,499</div>
-                    <ul class="space-y-3 text-sm text-gray-400 mb-8 flex-grow">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-emerald-400" size="16"></i> Custom Web App</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-emerald-400" size="16"></i> Pipeline Automation</li>
-                    </ul>
-                    <a href="#" class="w-full py-3 text-center border border-white/20 rounded-lg hover:bg-white/10 transition">Get Started</a>
-                </div>
-
-                <div class="p-8 rounded-2xl border border-white/10 bg-black flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Enterprise</h3>
-                    <div class="text-3xl font-bold mb-6">$6,000+</div>
-                    <ul class="space-y-3 text-sm text-gray-400 mb-8 flex-grow">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-emerald-400" size="16"></i> Custom Architecture</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-emerald-400" size="16"></i> API Integration</li>
-                    </ul>
-                    <a href="#" class="w-full py-3 text-center border border-white/20 rounded-lg hover:bg-white/10 transition">Contact Sales</a>
+                <div class="card card-hover">
+                    <i data-lucide="shield-check" class="icon"></i>
+                    <h3>Maintenance</h3>
+                    <p>Priority SLA and 24/7 support to ensure assets are secure.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
-                <p class="text-gray-400 mb-8 leading-relaxed">
-                    To make digital transformation accessible to businesses and the mass. We believe technology should be a bridge, not a barrier.
-                </p>
-                <div class="space-y-6">
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 bg-emerald-400/20 rounded-full flex items-center justify-center shrink-0 text-emerald-400 font-bold">1</div>
+    <section id="solutions" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pricing Solutions</h2>
+                <p>Transparent packages for every stage.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Digital Presence</h3>
+                    <div class="price">$299</div>
+                    <ul class="features">
+                        <li><i data-lucide="check"></i> Conversion Website</li>
+                        <li><i data-lucide="check"></i> Mobile Design</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-alt">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-tag">POPULAR</div>
+                    <h3>Business MGMT</h3>
+                    <div class="price">$799</div>
+                    <ul class="features">
+                        <li><i data-lucide="check"></i> Admin Panel</li>
+                        <li><i data-lucide="check"></i> Lead Tracking</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary full-width">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Automation</h3>
+                    <div class="price">$2,499</div>
+                    <ul class="features">
+                        <li><i data-lucide="check"></i> Custom Web App</li>
+                        <li><i data-lucide="check"></i> Pipeline Automation</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-white">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$6,000+</div>
+                    <ul class="features">
+                        <li><i data-lucide="check"></i> Custom Architecture</li>
+                        <li><i data-lucide="check"></i> API Integration</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-white">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="vision">
+        <div class="container vision-grid">
+            <div class="vision-content">
+                <h2>Our Vision</h2>
+                <p>To make digital transformation accessible to businesses and the mass. We believe technology should be a bridge, not a barrier.</p>
+                <div class="vision-steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
                         <div>
-                            <h4 class="font-bold">Know & Own Your Business</h4>
-                            <p class="text-sm text-gray-500">Total clarity over digital assets.</p>
+                            <h4>Know & Own Your Business</h4>
+                            <p>Total clarity over digital assets.</p>
                         </div>
                     </div>
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 bg-emerald-400/20 rounded-full flex items-center justify-center shrink-0 text-emerald-400 font-bold">2</div>
+                    <div class="step">
+                        <div class="step-num">2</div>
                         <div>
-                            <h4 class="font-bold">Track & Solve Problems</h4>
-                            <p class="text-sm text-gray-500">Data-driven decisions to fix bottlenecks.</p>
+                            <h4>Track & Solve Problems</h4>
+                            <p>Data-driven decisions to fix bottlenecks.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bg-white/5 p-6 md:p-10 rounded-2xl border border-white/10 mt-8 lg:mt-0">
-                <h3 class="text-2xl font-bold mb-6">Our Core Values</h3>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="p-4 bg-black rounded-lg text-center text-emerald-400 font-bold text-sm">Practicality</div>
-                    <div class="p-4 bg-black rounded-lg text-center text-emerald-400 font-bold text-sm">Honesty</div>
-                    <div class="p-4 bg-black rounded-lg text-center text-emerald-400 font-bold text-sm">Consistency</div>
-                    <div class="p-4 bg-black rounded-lg text-center text-emerald-400 font-bold text-sm">Innovation</div>
+            <div class="values-box">
+                <h3>Our Core Values</h3>
+                <div class="values-grid">
+                    <span>Practicality</span>
+                    <span>Honesty</span>
+                    <span>Consistency</span>
+                    <span>Innovation</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-black pt-20 pb-10 px-6 border-t border-white/10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            <div class="sm:col-span-2">
-                <div class="text-2xl font-bold gradient-text mb-6">Minitiativetech</div>
-                <p class="text-gray-500 max-w-sm mb-6">Zero Does Matter. Transforming businesses through digital honesty and innovative solutions.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-400 transition"><i data-lucide="facebook" size="18"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-400 transition"><i data-lucide="linkedin" size="18"></i></a>
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo gradient-text">Minitiativetech</div>
+                <p>Zero Does Matter. Transforming businesses through digital honesty and innovative solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/minitiativetech/"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/minitiativetech/"><i data-lucide="linkedin"></i></a>
+                    <a href="https://x.com/minitiativetech"><i data-lucide="twitter"></i></a>
+                    <a href="https://www.youtube.com/@minitiativetech"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
             
-            <div>
-                <h4 class="font-bold mb-6 uppercase text-sm tracking-widest">Contact</h4>
-                <div class="flex gap-3 text-gray-500 text-sm mb-4">
-                    <i data-lucide="map-pin" class="text-emerald-400 shrink-0" size="18"></i>
-                    <span>Lighthouse Road, Bogura, BD</span>
-                </div>
-                <div class="flex gap-3 text-gray-500 text-sm">
-                    <i data-lucide="phone" class="text-emerald-400 shrink-0" size="18"></i>
-                    <span>+880 1842 741 932</span>
-                </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i data-lucide="map-pin"></i>NK Tower, Romena Afaz Road, Jalesharitola, Bogura-5800 </p>
+                <br>
+                <p><i data-lucide="phone"></i> +8801842741932</p>
+                <br>
+                <p><i data-lucide="mail"></i> minitiativetech@gmail.com</p>
+                
             </div>
-
-            <div>
-                <h4 class="font-bold mb-6 uppercase text-sm tracking-widest">Legal</h4>
-                <ul class="space-y-3 text-gray-500 text-sm">
-                    <li><a href="#" class="hover:text-emerald-400">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-emerald-400">Terms of Service</a></li>
+            <div class="footer-legal">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 gap-4">
-            <p>&copy; 2024 Minitiativetech. All rights reserved.</p>
-            <p>Designed for Digital Transformation.</p>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Minitiativetech. All rights reserved.</p>
+            <p>Designed and Developed by <a href="https://minitiativetech.vercel.app/" style="text-decoration: none;">Minitiativetech</a></p>
         </div>
     </footer>
 
@@ -326,37 +251,10 @@
         <span class="font-bold">Chat</span>
     </a>
 
-    <script>
+    <script src="../assests/js/main.js"></script>
+   <script>
+        // Emergency fallback initialization
         lucide.createIcons();
-
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-
-        // Close menu on link click
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-black');
-            } else {
-                nav.classList.remove('bg-black');
-            }
-        });
     </script>
 </body>
-</html>  
+</html>

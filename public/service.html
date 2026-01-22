@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions | Minitiativetech</title>
+    <link rel="icon" href="image/techlogo.jpeg" type="image/x-icon">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* --- Root Variables & Reset --- */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        :root {
+            --brand-primary: #00ff88;
+            --brand-dark: #0a0a0a;
+            --brand-surface: #1a1a1a;
+            --text-white: #ffffff;
+            --text-gray: #9ca3af;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        /* --- Shared Components --- */
+        .gradient-text {
+            background: linear-gradient(90deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            padding: 0.875rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            transition: 0.3s;
+            font-size: 0.95rem;
+            width: 100%; /* Default to full width for mobile touch targets */
+        }
+
+        @media (min-width: 640px) {
+            .btn { width: auto; }
+        }
+
+        .btn-primary { background: var(--brand-primary); color: #000; }
+        .btn-primary:hover { background: #00e67a; transform: translateY(-2px); }
+
+        /* --- Navbar --- */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo { font-size: 1.25rem; font-weight: 800; white-space: nowrap; }
+
+        .nav-links { display: none; gap: 1.5rem; font-size: 0.85rem; align-items: center; }
+        
+        @media (min-width: 1024px) {
+            .nav-links { display: flex; }
+            .nav-content { height: 80px; }
+            .logo { font-size: 1.5rem; }
+        }
+
+        .nav-links a:hover { color: var(--brand-primary); }
+
+        .cart-trigger {
+            position: relative;
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--brand-primary);
+            color: #000;
+            font-size: 0.65rem;
+            font-weight: 800;
+            min-width: 18px;
+            height: 18px;
+            padding: 0 4px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-btn { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background: none; 
+            border: none; 
+            color: #fff; 
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        @media (min-width: 1024px) {
+            .menu-btn { display: none; }
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: var(--brand-dark);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            gap: 1.5rem;
+            transform: translateX(-100%);
+            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 999;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active { transform: translateX(0); }
+        .mobile-menu a { font-size: 1.25rem; font-weight: 600; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color); }
+
+        /* --- Shop Hero --- */
+        .shop-hero {
+            padding: 120px 0 40px;
+            text-align: center;
+        }
+
+        .shop-hero h1 { font-size: 2.25rem; line-height: 1.2; margin-bottom: 1rem; }
+        .shop-hero p { color: var(--text-gray); font-size: 1rem; max-width: 600px; margin: 0 auto; padding: 0 1rem; }
+
+        @media (min-width: 768px) {
+            .shop-hero { padding: 160px 0 60px; }
+            .shop-hero h1 { font-size: 3.5rem; }
+            .shop-hero p { font-size: 1.1rem; }
+        }
+
+        /* --- Products Grid --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding-bottom: 60px;
+        }
+
+        @media (min-width: 640px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .products-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        }
+
+        .product-card {
+            background: var(--brand-surface);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .product-card { padding: 2.5rem; border-radius: 24px; }
+        }
+
+        .product-card:hover { border-color: var(--brand-primary); transform: translateY(-5px); }
+        
+        .product-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .product-card .price { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+        .product-card .price span { font-size: 0.875rem; color: var(--text-gray); font-weight: 400; }
+
+        .product-features { flex-grow: 1; margin-bottom: 1.5rem; }
+        .product-features li { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--text-gray); font-size: 0.9rem; margin-bottom: 0.75rem; }
+        .product-features i { color: var(--brand-primary); flex-shrink: 0; margin-top: 3px; }
+
+        /* --- Cart Drawer --- */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            display: none;
+        }
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--brand-dark);
+            border-left: 1px solid var(--border-color);
+            z-index: 2001;
+            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-drawer.active { right: 0; }
+
+        .cart-header { padding: 1.5rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+        .cart-content { flex-grow: 1; padding: 1.5rem; overflow-y: auto; }
+        .cart-footer { padding: 1.5rem; border-top: 1px solid var(--border-color); background: rgba(255,255,255,0.02); }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+        }
+
+        .cart-item-info h4 { font-size: 0.95rem; }
+        .cart-item-info p { color: var(--brand-primary); font-weight: 700; font-size: 0.9rem; }
+        
+        .total-row { display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem; }
+
+        /* --- Footer --- */
+        .footer { padding: 60px 0 30px; border-top: 1px solid var(--border-color); }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; }
+        
+        @media (min-width: 768px) {
+            .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+        }
+
+        .footer-brand p { color: var(--text-gray); margin: 1rem 0; max-width: 350px; }
+        .social-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .social-links a { width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        
+        .footer h4 { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 1.25rem; color: var(--brand-primary); }
+        .footer p, .footer li { color: var(--text-gray); font-size: 0.85rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        
+        .footer-bottom { 
+            border-top: 1px solid var(--border-color); 
+            padding-top: 1.5rem; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 1rem; 
+            text-align: center; 
+            font-size: 0.7rem; 
+            color: #555; 
+        }
+
+        @media (min-width: 640px) {
+            .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo gradient-text">Minitiativetech</div>
+            
+            <div class="nav-links">
+                <div class="cart-trigger" onclick="toggleCart()">
+                    <!--<i data-lucide="shopping-cart"></i>-->
+                    <span class="cart-count" id="cart-count"></span>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div class="cart-trigger" style="display: flex;" onclick="toggleCart()" class="lg:hidden">
+                    <i data-lucide="shopping-cart" size="20"></i>
+                    <span class="cart-count" id="mobile-cart-badge">0</span>
+                </div>
+                <button id="menu-btn" class="menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html#home" onclick="toggleMobileMenu()">Home</a>
+            <a href="index.html#services" onclick="toggleMobileMenu()">Services</a>
+            <a href="index.html#solutions" onclick="toggleMobileMenu()">Solutions</a>
+            <a href="index.html#about" onclick="toggleMobileMenu()">About</a>
+            <a href="index.html#blog" onclick="toggleMobileMenu()">Blog</a>
+            <a href="index.html#contact" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Shop Content -->
+    <section class="shop-hero">
+        <div class="container">
+            <span class="gradient-text" style="font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem;">Digital Marketplace</span>
+            <h1>Pick Your <span class="gradient-text">Solution.</span></h1>
+            <p>Ready-to-deploy digital transformation packages. Add your needs to the cart and finalize with our consultants via WhatsApp.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="products-grid">
+            <!-- Package 1 -->
+            <div class="product-card">
+                <h3>Digital Presence</h3>
+                <div class="price">$299 <span>/ start</span></div>
+                <ul class="product-features">
+                    <li><i data-lucide="check" size="16"></i> 5-Page Website</li>
+                    <li><i data-lucide="check" size="16"></i> SEO Optimized</li>
+                    <li><i data-lucide="check" size="16"></i> Mobile Responsive</li>
+                    <li><i data-lucide="check" size="16"></i> 1 Year Hosting</li>
+                </ul>
+                <button class="btn btn-primary" onclick="addToCart('Digital Presence', 299)">Add to Cart</button>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="product-card">
+                <h3>Business MGMT</h3>
+                <div class="price">$799 <span>/ setup</span></div>
+                <ul class="product-features">
+                    <li><i data-lucide="check" size="16"></i> Custom Admin Panel</li>
+                    <li><i data-lucide="check" size="16"></i> Inventory Tracking</li>
+                    <li><i data-lucide="check" size="16"></i> Basic CRM</li>
+                    <li><i data-lucide="check" size="16"></i> Staff Roles</li>
+                </ul>
+                <button class="btn btn-primary" onclick="addToCart('Business MGMT', 799)">Add to Cart</button>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="product-card">
+                <h3>Automation Pro</h3>
+                <div class="price">$2,499 <span>/ app</span></div>
+                <ul class="product-features">
+                    <li><i data-lucide="check" size="16"></i> Custom SaaS App</li>
+                    <li><i data-lucide="check" size="16"></i> Workflow Automation</li>
+                    <li><i data-lucide="check" size="16"></i> API Integrations</li>
+                    <li><i data-lucide="check" size="16"></i> Cloud Architecture</li>
+                </ul>
+                <button class="btn btn-primary" onclick="addToCart('Automation Pro', 2499)">Add to Cart</button>
+            </div>
+
+            <!-- Package 4 -->
+            <div class="product-card">
+                <h3>Maintenance</h3>
+                <div class="price">$99 <span>/ month</span></div>
+                <ul class="product-features">
+                    <li><i data-lucide="check" size="16"></i> 24/7 Support</li>
+                    <li><i data-lucide="check" size="16"></i> Weekly Backups</li>
+                    <li><i data-lucide="check" size="16"></i> Security Audits</li>
+                    <li><i data-lucide="check" size="16"></i> Content Updates</li>
+                </ul>
+                <button class="btn btn-primary" onclick="addToCart('Maintenance', 99)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="remove-item" onclick="toggleCart()"><i data-lucide="x"></i></button>
+        </div>
+        <div id="cart-content" class="cart-content">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Total:</span>
+                <span id="cart-total">$0</span>
+            </div>
+            <button class="btn btn-primary" onclick="checkoutWhatsApp()">
+                <i data-lucide="message-circle"></i> Checkout on WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo gradient-text">Minitiativetech</div>
+                <p>Zero Does Matter. Transforming businesses through digital honesty and innovative solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/minitiativetech/"><i data-lucide="facebook" size="18"></i></a>
+                    <a href="#"><i data-lucide="instagram" size="18"></i></a>
+                    <a href="https://www.linkedin.com/in/minitiativetech/"><i data-lucide="linkedin" size="18"></i></a>
+                    <a href="https://x.com/minitiativetech"><i data-lucide="twitter" size="18"></i></a>
+                    <a href="https://www.youtube.com/@minitiativetech"><i data-lucide="youtube" size="18"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i data-lucide="map-pin" size="16"></i>NK Tower, Jalesharitola, Bogura-5800 </p>
+                <p><i data-lucide="phone" size="16"></i> +8801842741932</p>
+                <p><i data-lucide="mail" size="16"></i> minitiativetech@gmail.com</p>
+            </div>
+
+            <div class="footer-legal">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Minitiativetech. All rights reserved.</p>
+            <p>Developed by <a href="https://minitiativetech.vercel.app/" class="gradient-text">Minitiativetech</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Init Icons
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('active');
+            
+            if (menu.classList.contains('active')) {
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // Cart Logic
+        let cart = [];
+        const WHATSAPP_NUMBER = "8801842741932";
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-overlay');
+            drawer.classList.toggle('active');
+            overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
+            
+            // Close mobile menu if cart opens
+            if (drawer.classList.contains('active')) {
+                document.getElementById('mobile-menu').classList.remove('active');
+                const icon = document.getElementById('menu-icon');
+                icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            }
+        }
+
+        function addToCart(name, price) {
+            cart.push({ id: Date.now(), name, price });
+            updateCartUI();
+            if(cart.length === 1) toggleCart();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const content = document.getElementById('cart-content');
+            const count = document.getElementById('cart-count');
+            const mobBadge = document.getElementById('mobile-cart-badge');
+            const total = document.getElementById('cart-total');
+            
+            count.innerText = cart.length;
+            mobBadge.innerText = cart.length;
+
+            if(cart.length === 0) {
+                content.innerHTML = `<p style="color:var(--text-gray); text-align:center; margin-top:2rem; font-size:0.9rem;">Your cart is empty.</p>`;
+                total.innerText = '$0';
+            } else {
+                let sum = 0;
+                content.innerHTML = cart.map(item => {
+                    sum += item.price;
+                    return `
+                        <div class="cart-item">
+                            <div class="cart-item-info">
+                                <h4>${item.name}</h4>
+                                <p>$${item.price}</p>
+                            </div>
+                            <button class="remove-item" onclick="removeFromCart(${item.id})"><i data-lucide="trash-2" size="18"></i></button>
+                        </div>
+                    `;
+                }).join('');
+                total.innerText = `$${sum}`;
+            }
+            lucide.createIcons();
+        }
+
+        function checkoutWhatsApp() {
+            if(cart.length === 0) return;
+            
+            let msg = `Hello Minitiativetech! I am interested in these solutions:\n\n`;
+            let total = 0;
+            cart.forEach((item, i) => {
+                msg += `${i+1}. *${item.name}* ($${item.price})\n`;
+                total += item.price;
+            });
+            msg += `\n*Total Estimate: $${total}*\n\nPlease let me know the process to start.`;
+            
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
