@@ -65,13 +65,68 @@
         </div>
     </section>
     <div id="stats-placeholder"></div>
+    <section id="reviews" class="reviews">
+    <div class="container">
+        <div class="section-header">
+            <h2>Client Success Stories</h2>
+            <p>Don't just take our word for it—hear from the businesses we've transformed.</p>
+        </div>
+
+        <div class="reviews-slider">
+            <div class="reviews-track" id="reviewsTrack">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Minitiativetech transformed our manual school records into a seamless digital system. Their consistency is unmatched."</p>
+                    <div class="client-info">
+                        <img src="https://ui-avatars.com/api/?name=Rahat+Khan&background=00ff88&color=000" alt="Client">
+                        <div>
+                            <h4>Rahat Khan</h4>
+                            <span>Principal, ABC School</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"The UI/UX design they provided for our dashboard was sleek and incredibly intuitive. Highly recommend for any tech project."</p>
+                    <div class="client-info">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+J&background=00ff88&color=000" alt="Client">
+                        <div>
+                            <h4>Sarah J.</h4>
+                            <span>Founder, TechHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Finally a team that understands digital honesty. They didn't overpromise; they just over-delivered on our SEO goals."</p>
+                    <div class="client-info">
+                        <img src="https://ui-avatars.com/api/?name=Asif+Iqbal&background=00ff88&color=000" alt="Client">
+                        <div>
+                            <h4>Asif Iqbal</h4>
+                            <span>Marketing Director</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <button class="slider-dot active" onclick="currentSlide(0)"></button>
+                <button class="slider-dot" onclick="currentSlide(1)"></button>
+                <button class="slider-dot" onclick="currentSlide(2)"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
                 <h2>Our Expertise</h2>
                 <p>End-to-end digital services designed to scale your business.</p>
             </div>
-            
             <div class="card-grid">
                 <div class="card card-hover">
                     <i data-lucide="code-2" class="icon"></i>
@@ -183,11 +238,44 @@
         <i data-lucide="message-circle"></i>
         <span class="font-bold">Chat</span>
     </a>
+    <div id="cookieBanner" style="
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+">
+  <span>
+    We use cookies to improve your experience. By using our site, you agree to our cookie policy.
+  </span>
+  <button onclick="acceptCookies()" style="
+    background: #00ff88;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: bold;
+  ">
+    Accept
+  </button>
+</div>
+
 
     <script src="app.js"></script>
    <script>
         // Emergency fallback initialization
         lucide.createIcons();
     </script>
+    <!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/minitiativetech/30min?background_color=4ee559', text: 'Schedule time with us', color: '#5edb14', textColor: '#ffffff', branding: true }); }</script>
+<!-- Calendly badge widget end -->
 </body>
 </html>

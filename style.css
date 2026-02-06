@@ -400,4 +400,87 @@ html, body {
 .fade-out {
   opacity: 0;
 }
+.reviews {
+    padding: 80px 0;
+    background: #0f172a;
+}
 
+.reviews-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.reviews-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-card {
+    min-width: 100%;
+    padding: 40px;
+    background: rgba(53, 197, 24, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.stars {
+    color: #00ff88;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.client-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #00ff88;
+}
+
+.client-info h4 {
+    margin: 0;
+    color: #fff;
+}
+
+.client-info span {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #a3f79c;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slider-dot.active {
+    background: #00ff88;
+    transform: scale(1.2);
+}

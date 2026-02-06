@@ -96,5 +96,54 @@ setTimeout(() => {
   welcomeMessage.classList.add("fade-out");
 }, 10000);
 
-  
+
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+}
+
+function getCookie(name) {
+  const cookies = document.cookie.split("; ");
+  for (let c of cookies) {
+    const [key, value] = c.split("=");
+    if (key === name) return value;
+  }
+  return null;
+}
+
+function acceptCookies() {
+  setCookie("cookieConsent", "accepted", 365);
+  document.getElementById("cookieBanner").style.display = "none";
+}
+
+window.onload = function () {
+  if (!getCookie("cookieConsent")) {
+    document.getElementById("cookieBanner").style.display = "flex";
+  }
+};
+let currentIdx = 0;
+const track = document.getElementById('reviewsTrack');
+const dots = document.querySelectorAll('.slider-dot');
+
+function currentSlide(index) {
+    currentIdx = index;
+    updateSlider();
+}
+
+function updateSlider() {
+    track.style.transform = `translateX(-${currentIdx * 100}%)`;
+    
+    // Update dots
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIdx);
+    });
+}
+
+// Auto-slide every 5 seconds
+setInterval(() => {
+    currentIdx = (currentIdx + 1) % dots.length;
+    updateSlider();
+}, 2000);
+ 
 
