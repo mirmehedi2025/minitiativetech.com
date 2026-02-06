@@ -32,75 +32,69 @@ window.addEventListener('scroll', () => {
         nav.style.background = 'rgba(0, 0, 0, 0.8)';
     }
 });
-// 1. Product Data (Matching your Pricing Cards)
-const products = [
-    { id: 1, name: "Digital Presence", price: 299 },
-    { id: 2, name: "Business MGMT", price: 799 },
-    { id: 3, name: "Automation", price: 2499 },
-    { id: 4, name: "Enterprise", price: 6000 }
-];
 
-let cart = [];
-
-// 2. Function to Add to Cart
-function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    cart.push(product);
-    updateUI();
-    alert(`${product.name} added to cart!`);
-}
-
-// 3. Update the Badge and Cart List
-function updateUI() {
-    document.getElementById('cart-count').innerText = cart.length;
-    
-    const list = document.getElementById('cart-items-list');
-    const totalEl = document.getElementById('cart-total');
-    
-    list.innerHTML = '';
-    let total = 0;
-
-    cart.forEach((item, index) => {
-        total += item.price;
-        list.innerHTML += `
-            <div class="cart-item" style="display:flex; justify-content:space-between; margin-bottom:10px;">
-                <span>${item.name}</span>
-                <span>$${item.price} <button onclick="removeFromCart(${index})" style="color:red; border:none; background:none; cursor:pointer;">&times;</button></span>
-            </div>`;
+// Smooth Scrolling for Anchor Links
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
+anchorLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
     });
+});
 
-    totalEl.innerText = `$${total}`;
+// Dynamic HTML Injection
+/**
+ * Generic function to inject HTML into a target element
+ * @param {string} filePath - Path to the HTML file (e.g., 'price.html')
+ * @param {string} elementId - ID of the div where it should go
+ */
+async function loadComponent(filePath, elementId) {
+    try {
+        const response = await fetch(filePath);
+        if (!response.ok) throw new Error(`Could not find ${filePath}`);
+        
+        const html = await response.text();
+        document.getElementById(elementId).innerHTML = html;
+    } catch (err) {
+        console.warn(`Something went wrong: ${err}`);
+    }
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateUI();
+// Now you can call it for as many files as you want!
+loadComponent('section.html', 'section-placeholder');
+loadComponent('stats.html', 'stats-placeholder');
+loadComponent('websolution.html', 'websolution-placeholder');
+loadComponent('yt.html', 'yt-placeholder');
+loadComponent('seo.html', 'seo-placeholder');
+loadComponent('contactform.html', 'contactform-placeholder');
+
+const welcomeMessage = document.getElementById("welcomeMessage");
+const hour = new Date().getHours();
+
+let message = "";
+
+if (hour >= 5 && hour < 12) {
+  message = "Good Morning 🌅";
+} else if (hour >= 12 && hour < 17) {
+  message = "Good Afternoon ☀️";
+} else if (hour >= 17 && hour < 21) {
+  message = "Good Evening 🌇";
+} else {
+  message = "Good Night 🌙";
 }
 
-// 4. Toggle Cart Visibility
-function toggleCart() {
-    const cartSection = document.getElementById('cart');
-    cartSection.style.display = cartSection.style.display === 'none' ? 'block' : 'none';
-    window.location.href = "#cart";
-}
+welcomeMessage.textContent = message;
 
-// 5. Checkout / Billing Logic (WhatsApp Integration)
-function processOrder() {
-    if (cart.length === 0) return alert("Your cart is empty!");
+// Fade out after 10 seconds
+setTimeout(() => {
+  welcomeMessage.classList.add("fade-out");
+}, 10000);
 
-    let billSummary = "--- Order Bill ---\n";
-    let total = 0;
-    
-    cart.forEach(item => {
-        billSummary += `${item.name}: $${item.price}\n`;
-        total += item.price;
-    });
-    
-    billSummary += `\nTotal Amount: $${total}\n\nI would like to proceed with this order.`;
+  
 
-    // Encode for WhatsApp URL
-    const encodedMsg = encodeURIComponent(billSummary);
-    const whatsappUrl = `https://wa.me/8801842741932?text=${encodedMsg}`;
-    
-    window.open(whatsappUrl, '_blank');
-}

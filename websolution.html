@@ -1,0 +1,138 @@
+<style>
+.pricing-section {
+    padding: 80px 20px;
+    background: #0f172a;
+    color: #fff;
+}
+
+.pricing-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #00ff88;
+}
+
+/* Grid */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Card */
+.pricing-card {
+    background: #111827;
+    border-radius: 14px;
+    padding: 30px;
+    transition: 0.3s ease;
+    border: 1px solid #1f2937;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+    border-color: #00ff88;
+}
+
+.pricing-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.price.muted {
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+/* List */
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-card ul li {
+    padding: 8px 0;
+    font-size: 15px;
+    border-bottom: 1px dashed #1f2937;
+}
+
+/* Highlight */
+.pricing-card.highlight {
+    background: linear-gradient(180deg, #0f172a, #020617);
+    border: 1px solid #00ff88;
+}
+
+/* Mobile spacing */
+@media (max-width: 600px) {
+    .pricing-section {
+        padding: 60px 15px;
+    }
+}
+</style>
+
+<section class="pricing-section">
+    <h2>Solutions</h2>
+
+    <div class="pricing-grid">
+
+        <!-- Card -->
+        <div class="pricing-card">
+            <h3>Digital Presence</h3>
+            <p class="price">Setup: $299 – $399</p>
+            <p class="price muted">Monthly: $39 – $59</p>
+            <ul>
+                <li>Conversion-ready website</li>
+                <li>Mobile-first design</li>
+                <li>WhatsApp / Email CTA</li>
+                <li>Basic SEO & performance</li>
+                <li>Secure hosting & maintenance</li>
+            </ul>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Business Management</h3>
+            <p class="price">Setup: $799 – $1,199</p>
+            <p class="price muted">Monthly: $99 – $149</p>
+            <ul>
+                <li>Multi-page website</li>
+                <li>CMS / Admin panel</li>
+                <li>Lead tracking system</li>
+                <li>Email + WhatsApp automation</li>
+                <li>Analytics & reporting</li>
+            </ul>
+        </div>
+
+        <div class="pricing-card highlight">
+            <h3>Automation Engine</h3>
+            <p class="price">Setup: $2,499 – $3,499</p>
+            <p class="price muted">Monthly: $249 – $399</p>
+            <ul>
+                <li>Custom web application</li>
+                <li>CRM & pipeline automation</li>
+                <li>Appointment booking</li>
+                <li>Ads-ready funnels</li>
+                <li>Monthly optimization reports</li>
+            </ul>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Digital Transformation</h3>
+            <p class="price">Setup: From $6,000</p>
+            <p class="price muted">Monthly: Custom SLA</p>
+            <ul>
+                <li>Custom architecture</li>
+                <li>Advanced automation</li>
+                <li>API integrations</li>
+                <li>Security & compliance</li>
+                <li>Dedicated account manager</li>
+            </ul>
+        </div>
+
+    </div>
+</section>

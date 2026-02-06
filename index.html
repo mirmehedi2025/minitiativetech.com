@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minitiativetech | Zero Does Matter</title>
-    <link rel="icon" href="image/techlogo.jpeg" type="image/x-icon">
+    <title>minitiativetech.com</title>
+    <link rel="icon" href="image/minilogo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,8 +14,14 @@
 
     <nav class="navbar">
         <div class="container nav-content">
-            <div class="logo gradient-text">Minitiativetech</div>
-            
+            <!--<div class="logo gradient-text">Minitiativetech</div>-->
+            <a href="#home" class="logo-wrapper">
+    <img src="image/minilogo.png" alt="Minitiativetech Logo" class="nav-logo-img">
+    <div class="newDesign">Minitiativetech</div>
+</a>
+  <div class="welcome-box" class="fade-out">
+    <h1 id="welcomeMessage"></h1>
+  </div>
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#services">Services</a>
@@ -33,22 +40,21 @@
 
         <div id="mobile-menu" class="mobile-menu">
             <a href="#home">Home</a>
-            <a href="#services">Services</a>
+            <a href="#websolution-placeholder">Services</a>
             <a href="#solutions">Solutions</a>
             <a href="#about">About</a>
             <a href="#blog">Blog</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
-
     <section id="home" class="hero">
         <div class="container hero-grid">
             <div class="hero-text">
-                <span class="badge">Zero Does Matter</span>
-                <h1>Digital Transformation <br> <span class="gradient-text">Made Simple.</span></h1>
+                <span class="badge" id="designNew">Zero Does Matter</span>
+                <h1>Digital Transformation <br> <span id="newDesign"">Made Simple.</span></h1>
                 <p>We deliver practical websites and digital solutions that solve real problems for businesses with honesty and consistency.</p>
                 <div class="hero-btns">
-                    <a href="#solutions" class="btn btn-primary">View Solutions</a>
+                    <a href="https://url-shortener.me/B2LY" class="btn btn-primary" target="_blank">Book Now</a>
                     <a href="https://wa.me/8801842741932" class="btn btn-outline">Free Consultation</a>
                 </div>
             </div>
@@ -58,28 +64,7 @@
             </div>
         </div>
     </section>
-
-    <section class="stats">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">99%</div>
-                <div class="stat-label">Client Satisfaction</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">150+</div>
-                <div class="stat-label">Projects Delivered</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Support</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">10x</div>
-                <div class="stat-label">ROI for Clients</div>
-            </div>
-        </div>
-    </section>
-
+    <div id="stats-placeholder"></div>
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
@@ -121,59 +106,9 @@
             </div>
         </div>
     </section>
-
-    <section id="solutions" class="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2>Pricing Solutions</h2>
-                <p>Transparent packages for every stage.</p>
-            </div>
-
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Digital Presence</h3>
-                    <div class="price">$299</div>
-                    <ul class="features">
-                        <li><i data-lucide="check"></i> Conversion Website</li>
-                        <li><i data-lucide="check"></i> Mobile Design</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline-alt">Get Started</a>
-                </div>
-
-                <div class="pricing-card featured">
-                    <div class="popular-tag">POPULAR</div>
-                    <h3>Business MGMT</h3>
-                    <div class="price">$799</div>
-                    <ul class="features">
-                        <li><i data-lucide="check"></i> Admin Panel</li>
-                        <li><i data-lucide="check"></i> Lead Tracking</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary full-width">Get Started</a>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>Automation</h3>
-                    <div class="price">$2,499</div>
-                    <ul class="features">
-                        <li><i data-lucide="check"></i> Custom Web App</li>
-                        <li><i data-lucide="check"></i> Pipeline Automation</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline-white">Get Started</a>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <div class="price">$6,000+</div>
-                    <ul class="features">
-                        <li><i data-lucide="check"></i> Custom Architecture</li>
-                        <li><i data-lucide="check"></i> API Integration</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline-white">Contact Sales</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <div id="websolution-placeholder"></div>
+    <div id="yt-placeholder"></div>
+    <div id="seo-placeholder"></div>
     <section id="about" class="vision">
         <div class="container vision-grid">
             <div class="vision-content">
@@ -207,11 +142,11 @@
             </div>
         </div>
     </section>
-
+    <div id="contactform-placeholder"></div>
     <footer id="contact" class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <div class="logo gradient-text">Minitiativetech</div>
+                <div class="newDesign">Minitiativetech</div>
                 <p>Zero Does Matter. Transforming businesses through digital honesty and innovative solutions.</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/minitiativetech/"><i data-lucide="facebook"></i></a>
@@ -221,15 +156,13 @@
                     <a href="https://www.youtube.com/@minitiativetech"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
-            
             <div class="footer-contact">
                 <h4>Contact</h4>
+                <address>
                 <p><i data-lucide="map-pin"></i>NK Tower, Romena Afaz Road, Jalesharitola, Bogura-5800 </p>
-                <br>
                 <p><i data-lucide="phone"></i> +8801842741932</p>
-                <br>
                 <p><i data-lucide="mail"></i> minitiativetech@gmail.com</p>
-                
+                </address>
             </div>
             <div class="footer-legal">
                 <h4>Legal</h4>
