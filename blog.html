@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minitiativetech.com</title>
+    <link rel="icon" href="image/minilogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <!--<div class="logo gradient-text">Minitiativetech</div>-->
+            <a href="#home" class="logo-wrapper">
+    <img src="image/minilogo.png" alt="Minitiativetech Logo" class="nav-logo-img">
+    <div class="newDesign">Minitiativetech</div>
+</a>
+  <div class="welcome-box" class="fade-out">
+    <h1 id="welcomeMessage"></h1>
+  </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+
+                
+            </div>
+
+            <button id="menu-btn" class="menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+       <section class="blog-header">
+    <div class="container">
+        <h1 class="reveal-up">Insights & <span style="color: #CCF527;">Innovation</span></h1>
+        <p class="reveal-up">The latest in digital transformation and honest tech solutions.</p>
+        
+        <div class="blog-controls reveal-up">
+            <div class="search-wrapper">
+                <i data-lucide="search"></i>
+                <input type="text" id="blogSearch" placeholder="Search articles...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="web">Web Dev</button>
+                <button class="filter-btn" data-category="business">Business</button>
+                <button class="filter-btn" data-category="tech">Tech Trends</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-grid-section">
+    <div class="container">
+        <div class="blog-grid" id="blogContainer">
+            <article class="blog-card" data-category="web">
+                <div class="blog-img-box">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600" alt="Web Dev">
+                    <span class="category-tag">Web Dev</span>
+                </div>
+                <div class="blog-content">
+                    <span class="post-date">Feb 8, 2026</span>
+                    <h3>The Power of Digital Honesty in UI</h3>
+                    <p>Why transparency in design builds more trust than fancy animations...</p>
+                    <a href="#" class="read-more">Read More <i data-lucide="arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="business">
+                <div class="blog-img-box">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600" alt="Business Growth">
+                    <span class="category-tag">Business</span>
+                </div>
+                <div class="blog-content">
+                    <span class="post-date">Feb 5, 2026</span>
+                    <h3>Knowing Your Business Assets</h3>
+                    <p>Stop losing money on digital tools you don't actually own...</p>
+                    <a href="#" class="read-more">Read More <i data-lucide="arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="tech">
+                <div class="blog-img-box">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600" alt="Tech">
+                    <span class="category-tag">Tech Trends</span>
+                </div>
+                <div class="blog-content">
+                    <span class="post-date">Jan 30, 2026</span>
+                    <h3>AI: The Bridge or the Barrier?</h3>
+                    <p>How to use AI without losing the human touch in your brand...</p>
+                    <a href="#" class="read-more">Read More <i data-lucide="arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>                 
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="newDesign">Minitiativetech</div>
+                <p>Zero Does Matter. Transforming businesses through digital honesty and innovative solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/minitiativetech/"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/minitiativetech/"><i data-lucide="linkedin"></i></a>
+                    <a href="https://x.com/minitiativetech"><i data-lucide="twitter"></i></a>
+                    <a href="https://www.youtube.com/@minitiativetech"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <address>
+                <p><i data-lucide="map-pin"></i>NK Tower, Romena Afaz Road, Jalesharitola, Bogura-5800 </p>
+                <p><i data-lucide="phone"></i> +8801842741932</p>
+                <p><i data-lucide="mail"></i> minitiativetech@gmail.com</p>
+                </address>
+            </div>
+            <div class="footer-legal">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Minitiativetech. All rights reserved.</p>
+            <p>Designed and Developed by <a href="https://minitiativetech.vercel.app/" style="text-decoration: none;">Minitiativetech</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/8801842741932" class="whatsapp-float">
+        <i data-lucide="message-circle"></i>
+        <span class="font-bold">Chat</span>
+    </a>
+    <div id="cookieBanner" style="
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+">
+  <span>
+    We use cookies to improve your experience. By using our site, you agree to our cookie policy.
+  </span>
+  <button onclick="acceptCookies()" style="
+    background: #00ff88;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: bold;
+  ">
+    Accept
+  </button>
+</div>
+
+
+    <script src="app.js"></script>
+   <script>
+        // Emergency fallback initialization
+        lucide.createIcons();
+    </script>
+</body>
+</html>
