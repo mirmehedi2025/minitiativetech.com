@@ -247,7 +247,7 @@ img { max-width: 100%; height: auto; display: block; }
     .hero-image img { width: 100%; height: auto; }
     .image-glow { display: none; }
     .stats-grid { grid-template-columns: 1fr 1fr; }
-    .footer-bottom { flex-direction: column; text-align: center; }
+    .footer-bottom { flex-direction: column; text-align:left; }
     .whatsapp-float { bottom: 20px; right: 20px; padding: 10px 16px; font-size: 14px; }
 }
 
@@ -325,7 +325,7 @@ body {
     .stat-number { font-size: 2rem; }
     
     .footer-grid { 
-        text-align: center;
+        text-align: left;
         grid-template-columns: 1fr;
     }
     
