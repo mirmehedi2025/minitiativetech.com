@@ -678,3 +678,63 @@ html, body {
 @media (max-width: 768px) {
     .blog-grid { grid-template-columns: 1fr; }
 }
+.technology {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: white;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: #94a3b8;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+.tech-card {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.tech-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255,255,255,0.1);
+}
+
+.tech-card img {
+  width: 60px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+.tech-card:hover img {
+  transform: rotate(10deg) scale(1.2);
+}
+
+.tech-card h4 {
+  font-size: 18px;
+}
