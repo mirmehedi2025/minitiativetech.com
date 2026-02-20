@@ -24,14 +24,14 @@ mobileLinks.forEach(link => {
 });
 
 // Navbar Scroll Effect
-window.addEventListener('scroll', () => {
+/*window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     if (window.scrollY > 50) {
         nav.style.background = '#000000';
     } else {
         nav.style.background = 'rgba(0, 0, 0, 0.8)';
     }
-});
+});*/
 
 // Smooth Scrolling for Anchor Links
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
