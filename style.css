@@ -43,6 +43,7 @@ img { max-width: 100%; height: auto; display: block; }
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+    
 }
 #newDesign {
     font-size: clamp(2.5rem, 8vw, 5.5rem);
@@ -60,6 +61,7 @@ img { max-width: 100%; height: auto; display: block; }
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+
 }
 
 .btn {
@@ -113,6 +115,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .logo { font-size: 1.5rem; font-weight: 800; }
+.logo img { height: 60px; width: auto; }
 
 .nav-links { display: flex; gap: 2rem; font-size: 0.9rem; }
 .nav-links a:hover { color: var(--brand-primary); }
@@ -221,6 +224,7 @@ img { max-width: 100%; height: auto; display: block; }
     transition: all 0.3s ease;
     min-height: 44px;
     touch-action: manipulation;
+    text-shadow: #00e67a 0px 0px 10px;
 }
 
 .whatsapp-float:hover {
@@ -711,18 +715,21 @@ html, body {
 }
 
 .tech-card {
-  background: rgba(255,255,255,0.05);
+  background: #ffffff;
   padding: 30px;
   border-radius: 15px;
   text-align: center;
   backdrop-filter: blur(10px);
   transition: all 0.4s ease;
   cursor: pointer;
+  color: #000000;
 }
 
 .tech-card:hover {
   transform: translateY(-10px) scale(1.05);
-  background: rgba(255,255,255,0.1);
+  background: rgba(124, 243, 124, 0.918);
+  color: #000000;
+  text-shadow: #0f172a 0px 0px 10px;
 }
 
 .tech-card img {
