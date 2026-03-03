@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minitiativetech Template Builder</title>
+    <link rel="stylesheet" href="template.css">
+</head>
+<body>
+
+    <aside id="sidebar">
+        <header>
+            <h2>Template Builder</h2>
+            <p>Customize your email below</p>
+        </header>
+
+        <div class="control-group">
+            <h3>Header & Branding</h3>
+            <label>Brand Name</label>
+            <input type="text" id="brandName" value="Minitiativetech">
+            
+            <label>Tagline</label>
+            <input type="text" id="tagline" value="Zero Does Matter">
+            
+            <div class="color-picker-row">
+                <div>
+                    <label>Brand</label>
+                    <input type="color" id="brandColor" value="#1365fd">
+                </div>
+                <div>
+                    <label>Tagline</label>
+                    <input type="color" id="taglineColor" value="#4beb0b">
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <h3>Email Body</h3>
+            <label>Greeting</label>
+            <input type="text" id="greeting" value="Hello there,">
+            
+            <label>Main Message</label>
+            <textarea id="bodyText" rows="4">Welcome to Minitiativetech. We believe efficiency starts from the ground up...</textarea>
+            
+            <label>Background Color</label>
+            <input type="color" id="bodyBg" value="#0f172a" class="wide-color">
+        </div>
+
+        <div class="control-group">
+            <h3>Call to Action</h3>
+            <label>Button Text</label>
+            <input type="text" id="btnText" value="Visit Our Website">
+            
+            <label>Button Link</label>
+            <input type="text" id="btnUrl" value="https://minitiativetech.com">
+            
+            <label>Button Color</label>
+            <input type="color" id="btnBg" value="#27ADF5" class="wide-color">
+        </div>
+
+        <div class="sidebar-footer">
+            <button id="copyBtn" class="primary-btn">Copy HTML Code</button>
+        </div>
+    </aside>
+
+    <main id="preview-area">
+        <div class="canvas-wrapper">
+            <iframe id="email-preview"></iframe>
+        </div>
+    </main>
+
+    <script src="template.js"></script>
+</body>
+</html>
