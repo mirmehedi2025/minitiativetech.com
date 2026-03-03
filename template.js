@@ -18,9 +18,9 @@ function generateTemplate() {
         <td align="center" style="padding:40px 0;">
             <table width="600" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                 <tr>
-                    <td align="center" style="padding:40px 20px;background:#ffffff;">
+                    <td align="center" style="padding:40px 20px;background:${vals.bodyBg};">
                         <h1 style="margin:0;font-size:30px;color:${vals.brandColor};font-weight:600;">${vals.brandName}</h1>
-                        <p style="margin:8px 0 0 0;font-size:11px;color:${vals.taglineColor};letter-spacing:2px;text-transform:uppercase;">${vals.tagline}</p>
+                        <p style="margin:8px 0 0 0;font-size:9px;color:${vals.taglineColor};letter-spacing:2px;text-transform:uppercase;">${vals.tagline}</p>
                     </td>
                 </tr>
                 <tr>
@@ -38,7 +38,7 @@ function generateTemplate() {
                 </tr>
                 <tr>
                     <td style="padding:30px;background:${vals.bodyBg};text-align:center;border-top:1px solid rgba(255,255,255,0.1);">
-                        <p style="color:#999999;font-size:12px;margin:0;">© 2024 ${vals.brandName}. All rights reserved.</p>
+                        <p style="color:#999999;font-size:12px;margin:0;">© 2026 ${vals.brandName}. All rights reserved.</p>
                     </td>
                 </tr>
             </table>
